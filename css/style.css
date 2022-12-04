@@ -141,15 +141,9 @@ body {
     color: var(--color-blue);
 }
 
-.header-contact-link:hover .header-icon,
-.header-contact-link:focus .header-icon {
-    fill: var(--color-blue);
-}
-
 .header-icon {
-    fill: var(--color-grey);
+    fill: currentColor;
     margin-right: 10px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
@@ -164,9 +158,7 @@ body {
     height: 4px;
     background: #2196F3;
     border-radius: 2px;
-
     bottom: 0;
-
 }
 
 /* ---------hero--------- */
@@ -178,7 +170,7 @@ body {
     padding-top: 200px;
     padding-bottom: 200px;
     background-position: center;
-    width: 1600px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -398,7 +390,7 @@ body {
     gap: 30px;
 }
 
-.clients-item {
+/* .clients-item {
     display: flex;
     justify-content: center;
     width: 170px;
@@ -406,7 +398,7 @@ body {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */
 
 .clients-link {
     display: flex;
@@ -415,20 +407,22 @@ body {
     width: 100%;
     height: 100%;
     color: #AFB1B8;
+    width: 170px;
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients-item:hover {
-    border: 1px solid #2196F3;
-    color: #2196F3;
-}
-
-.clients-item:hover .clients-icon {
-    fill: #2196F3;
+.clients-link:hover,
+.clients-link:focus {
+    border: 1px solid var(--color-blue);
+    color: var(--color-blue);
 }
 
 .clients-icon {
     fill: currentColor;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ---------footer------ */
@@ -525,15 +519,20 @@ body {
     fill: #FFFFFF;
 }
 
-.footer-label-text {
+.footer-label {
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
     color: #FFFFFF;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-input {
@@ -544,6 +543,11 @@ body {
     background-color: transparent;
     padding-left: 16px;
     color: #FFFFFF;
+    /* margin-top: 20px; */
+    outline: none;
+}
+.footer-input:focus{
+    border-color: #212121;
 }
 
 .footer-btn {
@@ -560,7 +564,12 @@ body {
     letter-spacing: 0.06em;
     border: none;
     color: #FFFFFF;
-    margin: 0 auto;
+    margin-left: 12px;
+    /* margin: 0 auto; */
+}
+
+.footer-icon{
+    margin-left: 10px;
 }
 
 
@@ -669,10 +678,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    ;
-
-    /* transition: opacity 2500ms linear; */
-    /* animation: animate75 3000ms 1000ms; */
 }
 
 /* @keyframes animate75 {
@@ -718,6 +723,7 @@ body {
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #FFFFFF;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close:hover {
@@ -730,6 +736,7 @@ body {
 
 .modal-close-icon {
     fill: #000000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -750,27 +757,9 @@ body {
     margin-bottom: 12px;
 }
 
-/* 
-.modal-field{
-    margin-bottom: 10px;
-} */
-
 .modal-field:not(:last-child) {
     margin-bottom: 10px;
 }
-
-/* .modal-field:last-child {
-    margin-bottom: 20px;
-}
-
-.modal-field:not(:last-child){
-    margin-bottom: 10px;
-} */
-
-/* .modal-form{
-    gap: 10px;
-} */
-
 
 .modal-input {
     width: 448px;
@@ -784,6 +773,8 @@ body {
     line-height: 23px;
     letter-spacing: 0.03em;
     outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .modal-input:focus {
@@ -791,7 +782,7 @@ body {
 }
 
 .modal-input:focus+.modal-icon {
-    fill: #2196F3;
+    fill: var(--color-blue);
 }
 
 .modal-input::placeholder {
@@ -802,14 +793,6 @@ body {
     color: green;
 }
 
-/* .modal-input:not(:focus):not(:placeholder-shown):valid {
-    background-color: greenyellow;
-}
-
-.modal-input:not(:focus):not(:placeholder-shown):invalid {
-    background-color: rgb(204, 26, 204);
-} */
-
 .input-box {
     position: relative;
 }
@@ -819,6 +802,7 @@ body {
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-label {
@@ -831,13 +815,29 @@ body {
     margin-bottom: 4px;
 }
 
+.modal-input{
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    padding-right: 12px;
+}
+
 .modal-comment {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
     width: 100%;
     height: 120px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     resize: none;
     padding: 12px 16px;
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-comment:focus {
+    border-color: var(--color-blue);
 }
 
 .modal-comment::placeholder {
@@ -869,6 +869,9 @@ body {
     justify-content: center;
     align-items: center;
     fill: transparent;
+    transition: background-color 2500ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 2500ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .check-text a {
@@ -880,12 +883,9 @@ body {
 
 .modal-check:checked+.check-text span {
     background-color: var(--color-blue);
-    border: none;
+    border: 2px solid transparent;
+    /* border: none; */
     fill: #FFFFFF;
-}
-
-.modal-check:focus+.check-text span {
-    border-color: var(--color-blue);
 }
 
 .hide {
@@ -910,6 +910,8 @@ body {
     line-height: 1.88;
     letter-spacing: 0.06em;
     color: #FFFFFF;
+    display: block;
+    margin: 0 auto;
     /* display: flex;
             justify-content: center;
             align-items: center; */

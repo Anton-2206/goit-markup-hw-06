@@ -375,18 +375,17 @@
         </ul>
       </div>
       <div class="footer-label">
-        <!-- <label for="footer-mail" class="footer-label-text">Підпишіться на розсилку</label> 
-              -->
-
-        <p class="footer-label-text">Підпишіться на розсилку</p>
-        <input type="text" name="footer-mail" class="footer-input" placeholder="E-mail">
-
-      </div>
+        <p class="footer-label">Підпишіться на розсилку</p>
+        <form action="#" class="footer-form">
+        <input type="text" name="footer-mail" class="footer-input" id="footer-mail" placeholder="E-mail">
       <button type="submit" class="footer-btn">Відправити
         <svg class="footer-icon" width="24" height="24">
           <use href="./images/main/svg/icons.svg#icon-send"></use>
         </svg>
       </button>
+      </form>
+      </div>
+      
     </div>
   </footer>
   <div class="backdrop is-hidden" data-modal>
@@ -401,7 +400,7 @@
         <div class="modal-field">
           <label for="user-name" class="input-label">Ім'я</label>
           <div class="input-box">
-            <input type="text" name="user-name" class="modal-input" placeholder="">
+            <input type="text" name="user-name" class="modal-input" id="user-name" placeholder="">
             <svg class="modal-icon" width="18" height="18">
               <use href="./images/main/svg/icons.svg#icon-modal-person"></use>
             </svg>
@@ -410,7 +409,7 @@
         <div class="modal-field">
           <label for="user-tel" class="input-label">Телефон</label>
           <div class="input-box">
-            <input type="tel" name="user-tel" class="modal-input" placeholder="" title="+380 (63) 111-11-11">
+            <input type="tel" name="user-tel" class="modal-input" id="user-tel" placeholder="" title="+380 (63) 111-11-11">
             <svg class="modal-icon" width="18" height="18">
               <use href="./images/main/svg/icons.svg#icon-modal-phone"></use>
             </svg>
@@ -419,7 +418,7 @@
         <div class="modal-field">
           <label for="user-mail" class="input-label">Пошта</label>
           <div class="input-box">
-            <input type="email" name="user-mail" class="modal-input" placeholder="">
+            <input type="email" name="user-mail" class="modal-input" id="user-mail" placeholder="">
             <svg class="modal-icon" width="18" height="18">
               <use href="./images/main/svg/icons.svg#icon-modal-email"></use>
             </svg>
